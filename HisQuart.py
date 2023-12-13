@@ -1,0 +1,16 @@
+import numpy as np
+import matplotlib.pyplot as plt
+np.random.seed(0)
+exam_scores = np.random.normal(70, 15, 1000)
+plt.hist(exam_scores, bins=20, color='skyblue', edgecolor='black')
+plt.title('Histogram of Exam Scores')
+plt.xlabel('Scores')
+plt.ylabel('Frequency')
+q1 = np.percentile(exam_scores, 25)
+median = np.percentile(exam_scores, 50)
+q3 = np.percentile(exam_scores, 75)
+plt.axvline(q1, color='r', linestyle='dashed', linewidth=2, label='Q1')
+plt.axvline(median, color='g', linestyle='dashed', linewidth=2, label='Q2 (Median)')
+plt.axvline(q3, color='b', linestyle='dashed', linewidth=2, label='Q3')
+plt.legend()
+plt.show()
